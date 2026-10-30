@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schema.railpack.com",
+  "provider": "python",
+  "steps": {
+    "install": {
+      "commands": ["python -m pip install ."]
+    }
+  },
+  "deploy": {
+    "startCommand": "python -m autofly_engine.server",
+    "healthcheckPath": "/api/healthz",
+    "healthcheckTimeout": 30,
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 5
+  }
+}
+
